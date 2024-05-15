@@ -1,0 +1,31 @@
+# permissions for end users to edit inheritors.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: inheritor-editor-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: label-inheritance-operator
+    app.kubernetes.io/part-of: label-inheritance-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: inheritor-editor-role
+rules:
+- apiGroups:
+  - labels.theisferre
+  resources:
+  - inheritors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - labels.theisferre
+  resources:
+  - inheritors/status
+  verbs:
+  - get

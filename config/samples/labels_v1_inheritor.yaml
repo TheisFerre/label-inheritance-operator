@@ -1,0 +1,18 @@
+apiVersion: labels.theisferre/v1
+kind: Inheritor
+metadata:
+  labels:
+    app.kubernetes.io/name: inheritor
+    app.kubernetes.io/instance: inheritor-sample
+    app.kubernetes.io/part-of: label-inheritance-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: label-inheritance-operator
+  name: inheritor-sample
+spec:
+  selectors:
+    - namespaceSelector:
+        matchLabels:
+          kubernetes.io/metadata.name: inheritor
+      includeLabels:
+        - app
+        - foo

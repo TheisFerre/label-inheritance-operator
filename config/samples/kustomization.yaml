@@ -1,0 +1,4 @@
+## Append samples of your project ##
+resources:
+- labels_v1_inheritor.yaml
+#+kubebuilder:scaffold:manifestskustomizesamples

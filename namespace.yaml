@@ -1,0 +1,8 @@
+# create namespace called inheritor
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: inheritor
+  labels:
+    app: test
+    foo: baaaar

@@ -1,0 +1,52 @@
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: manager-role
+rules:
+- apiGroups:
+  - ""
+  resources:
+  - namespaces
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - '*'
+  resources:
+  - '*'
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - labels.theisferre
+  resources:
+  - inheritors
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - labels.theisferre
+  resources:
+  - inheritors/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - labels.theisferre
+  resources:
+  - inheritors/status
+  verbs:
+  - get
+  - patch
+  - update
